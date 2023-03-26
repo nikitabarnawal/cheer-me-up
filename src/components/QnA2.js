@@ -1,10 +1,15 @@
-const QnA2 = ({ handleSubmit }) => {
+const QnA2 = ({ prev, handleSubmit, handleData, questionList }) => {
   return (
     <div className="form2">
-      <div className="qna2">
-        <p>what brings you in today?</p>
-        <textarea />
-      </div>
+      {questionList?.subjective_questions.map((question) => (
+        <div className="qsn" key={question}>
+          {question}
+          <input type="text" onChange={(e) => handleData(e, question)} />
+        </div>
+      ))}
+      <button type="buton" onClick={prev}>
+        Prev
+      </button>
       <button type="buton" onClick={handleSubmit}>
         Submit
       </button>

@@ -1,5 +1,7 @@
-.qna {
-  margin-bottom: 20px;
+.qsn {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
 }
 
 .App {
@@ -26,10 +28,22 @@ body {
 }
 
 .qsnForm {
-  width: 60%;
+  width: 100%;
   padding: 5%;
   background-color: lightblue;
   backdrop-filter: blur(16px);
   font-size: 15px;
   font-family: Arial, Helvetica, sans-serif;
+  border-radius: 15px;
+}
+
+/* input {
+  line-height: 5em;
+} */
+
+.result {
+  display: flex;
+  font-size: 3rem;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
 }

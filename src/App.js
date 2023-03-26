@@ -4,9 +4,7 @@ import QuestionForm from "./components/questionForm";
 function App() {
   return (
     <div className="App">
-      <div className="qsnForm">
-        <QuestionForm />
-      </div>
+      <QuestionForm />
     </div>
   );
 }

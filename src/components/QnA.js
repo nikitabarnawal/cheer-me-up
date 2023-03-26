@@ -1,60 +1,38 @@
-const QnA = ({ handleData, next }) => {
+const QnA = ({ handleData, next, questionList }) => {
   return (
     <div className="form1">
-      <div className="qna">
-        <div className="qsn">Little interest or pleasure in doing things?</div>
-        <input
-          type="radio"
-          id="yes"
-          name="yes"
-          value="yes"
-          onChange={handleData}
-        />
-          <label for="yes">Yes</label>
-        <input
-          type="radio"
-          id="no"
-          name="no"
-          value="no"
-          onChange={handleData}
-        />
-          <label for="no">No</label> {" "}
-        <input
-          type="radio"
-          id="notAtAll"
-          name="notAtAll"
-          value="notAtAll"
-          onChange={handleData}
-        />
-          <label for="notAtAll">not at all</label>
-      </div>
-      <div className="qna">
-        <div className="qsn">Feeling down, depressed, or hopeless?</div>
-        <input
-          type="radio"
-          id="yes"
-          name="yes"
-          value="yes"
-          onChange={handleData}
-        />
-          <label for="yes">Yes</label>
-        <input
-          type="radio"
-          id="no"
-          name="no"
-          value="no"
-          onChange={handleData}
-        />
-          <label for="no">No</label> {" "}
-        <input
-          type="radio"
-          id="notAtAll"
-          name="notAtAll"
-          value="notAtAll"
-          onChange={handleData}
-        />
-          <label for="notAtAll">not at all</label>
-      </div>
+      {questionList.questions?.map((question) => (
+        <div className="qsn" key={question}>
+          {question}
+          <div className="radioBtn">
+            <input
+              type="radio"
+              id="yes"
+              name="yes"
+              value="yes"
+              onChange={(e) => handleData(e, question)}
+            />
+              <label htmlFor="yes">Yes</label>
+            <input
+              type="radio"
+              id="no"
+              name="no"
+              value="no"
+              onChange={(e) => handleData(e, question)}
+            />
+              <label htmlFor="no">No</label> {" "}
+            <input
+              type="radio"
+              id="notAtAll"
+              name="notAtAll"
+              value="notAtAll"
+              onChange={(e) => handleData(e, question)}
+            />
+              <label htmlFor="notAtAll">not at all</label>
+          </div>
+        </div>
+      ))}
+
       <button type="button" onClick={next}>
         next
       </button>
