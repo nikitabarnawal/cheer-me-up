@@ -77,7 +77,12 @@ const QuestionForm = (props) => {
     }
   };
 
-  return <div className="qsnForm">{renderData()}</div>;
+  return (
+    <div className="qsnForm">
+      <h1>Cheer Me Up</h1>
+      {renderData()}
+    </div>
+  );
 };
 
 export default QuestionForm;
